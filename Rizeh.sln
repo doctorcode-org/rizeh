@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29326.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizehServer", "RizehServer\RizehServer.csproj", "{D92923ED-3FB3-4BCE-98AD-AF973F77E10F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RizehClient", "RizehClient\RizehClient.csproj", "{533ABD69-7509-44C0-BF4A-0C878C2C6118}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D92923ED-3FB3-4BCE-98AD-AF973F77E10F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D92923ED-3FB3-4BCE-98AD-AF973F77E10F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D92923ED-3FB3-4BCE-98AD-AF973F77E10F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D92923ED-3FB3-4BCE-98AD-AF973F77E10F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{533ABD69-7509-44C0-BF4A-0C878C2C6118}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{533ABD69-7509-44C0-BF4A-0C878C2C6118}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{533ABD69-7509-44C0-BF4A-0C878C2C6118}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{533ABD69-7509-44C0-BF4A-0C878C2C6118}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4EEAEB23-92C0-4052-BFD8-D253B819972C}
+	EndGlobalSection
+EndGlobal

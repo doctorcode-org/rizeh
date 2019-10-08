@@ -1,0 +1,868 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RizehModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="RizehModelStoreContainer">
+          <EntitySet Name="tbl_Logins" EntityType="RizehModel.Store.tbl_Logins" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_Payments" EntityType="RizehModel.Store.tbl_Payments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_Products" EntityType="RizehModel.Store.tbl_Products" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_ProductType" EntityType="RizehModel.Store.tbl_ProductType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_Requests" EntityType="RizehModel.Store.tbl_Requests" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_RequestType" EntityType="RizehModel.Store.tbl_RequestType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_Scores" EntityType="RizehModel.Store.tbl_Scores" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_ScoreType" EntityType="RizehModel.Store.tbl_ScoreType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_Sites" EntityType="RizehModel.Store.tbl_Sites" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_Users" EntityType="RizehModel.Store.tbl_Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_UserState" EntityType="RizehModel.Store.tbl_UserState" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_Visits" EntityType="RizehModel.Store.tbl_Visits" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_tbl_Logins_tbl_Users" Association="RizehModel.Store.FK_tbl_Logins_tbl_Users">
+            <End Role="tbl_Users" EntitySet="tbl_Users" />
+            <End Role="tbl_Logins" EntitySet="tbl_Logins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Payments_tbl_Products" Association="RizehModel.Store.FK_tbl_Payments_tbl_Products">
+            <End Role="tbl_Products" EntitySet="tbl_Products" />
+            <End Role="tbl_Payments" EntitySet="tbl_Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Payments_tbl_Users" Association="RizehModel.Store.FK_tbl_Payments_tbl_Users">
+            <End Role="tbl_Users" EntitySet="tbl_Users" />
+            <End Role="tbl_Payments" EntitySet="tbl_Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Products_ProductType" Association="RizehModel.Store.FK_tbl_Products_ProductType">
+            <End Role="tbl_ProductType" EntitySet="tbl_ProductType" />
+            <End Role="tbl_Products" EntitySet="tbl_Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Requests_tbl_RequestType" Association="RizehModel.Store.FK_tbl_Requests_tbl_RequestType">
+            <End Role="tbl_RequestType" EntitySet="tbl_RequestType" />
+            <End Role="tbl_Requests" EntitySet="tbl_Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Requests_tbl_Users" Association="RizehModel.Store.FK_tbl_Requests_tbl_Users">
+            <End Role="tbl_Users" EntitySet="tbl_Users" />
+            <End Role="tbl_Requests" EntitySet="tbl_Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Scores_tbl_ScoreType" Association="RizehModel.Store.FK_tbl_Scores_tbl_ScoreType">
+            <End Role="tbl_ScoreType" EntitySet="tbl_ScoreType" />
+            <End Role="tbl_Scores" EntitySet="tbl_Scores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Scores_tbl_Users" Association="RizehModel.Store.FK_tbl_Scores_tbl_Users">
+            <End Role="tbl_Users" EntitySet="tbl_Users" />
+            <End Role="tbl_Scores" EntitySet="tbl_Scores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Sites_tbl_Users" Association="RizehModel.Store.FK_tbl_Sites_tbl_Users">
+            <End Role="tbl_Users" EntitySet="tbl_Users" />
+            <End Role="tbl_Sites" EntitySet="tbl_Sites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Users_tbl_UserState" Association="RizehModel.Store.FK_tbl_Users_tbl_UserState">
+            <End Role="tbl_UserState" EntitySet="tbl_UserState" />
+            <End Role="tbl_Users" EntitySet="tbl_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Visits_tbl_Sites" Association="RizehModel.Store.FK_tbl_Visits_tbl_Sites">
+            <End Role="tbl_Sites" EntitySet="tbl_Sites" />
+            <End Role="tbl_Visits" EntitySet="tbl_Visits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Visits_tbl_Users" Association="RizehModel.Store.FK_tbl_Visits_tbl_Users">
+            <End Role="tbl_Users" EntitySet="tbl_Users" />
+            <End Role="tbl_Visits" EntitySet="tbl_Visits" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tbl_Logins">
+          <Key>
+            <PropertyRef Name="LoginId" />
+          </Key>
+          <Property Name="LoginId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="LoginDate" Type="datetime" Nullable="false" />
+          <Property Name="IP" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="SystemId" Type="nvarchar" Nullable="false" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="tbl_Payments">
+          <Key>
+            <PropertyRef Name="PaymentId" />
+          </Key>
+          <Property Name="PaymentId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="IdGet" Type="int" Nullable="false" />
+          <Property Name="TransId" Type="int" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="PayDate" Type="datetime" Nullable="false" />
+          <Property Name="Amount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_Products">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductTypeId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="350" />
+          <Property Name="Cost" Type="int" Nullable="false" />
+          <Property Name="Discount" Type="int" Nullable="false" />
+          <Property Name="RegisterDate" Type="datetime" Nullable="false" />
+          <Property Name="Value" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_ProductType">
+          <Key>
+            <PropertyRef Name="ProductTypeId" />
+          </Key>
+          <Property Name="ProductTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Period" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_Requests">
+          <Key>
+            <PropertyRef Name="RequestId" />
+          </Key>
+          <Property Name="RequestId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RequestTypeId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="RequestDate" Type="datetime" Nullable="false" />
+          <Property Name="IP" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="SystemId" Type="nvarchar" Nullable="false" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="tbl_RequestType">
+          <Key>
+            <PropertyRef Name="RequestTypeId" />
+          </Key>
+          <Property Name="RequestTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CommandName" Type="varchar" Nullable="false" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="tbl_Scores">
+          <Key>
+            <PropertyRef Name="ScoreId" />
+          </Key>
+          <Property Name="ScoreId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ScoreTypeId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Value" Type="int" Nullable="false" />
+          <Property Name="GetDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_ScoreType">
+          <Key>
+            <PropertyRef Name="ScoreTypeId" />
+          </Key>
+          <Property Name="ScoreTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="tbl_Sites">
+          <Key>
+            <PropertyRef Name="SiteId" />
+          </Key>
+          <Property Name="SiteId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OwnerId" Type="int" Nullable="false" />
+          <Property Name="Url" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Topic" Type="nvarchar" MaxLength="500" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1500" />
+          <Property Name="RegisterDate" Type="datetime" Nullable="false" />
+          <Property Name="OldVisits" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsBlocked" Type="bit" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeleteDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Password" Type="char" Nullable="false" MaxLength="32" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="StateId" Type="int" Nullable="false" />
+          <Property Name="ScoreStep" Type="int" Nullable="false" />
+          <Property Name="ConfirmCode" Type="varchar" Nullable="false" MaxLength="6" />
+          <Property Name="ExpireDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_UserState">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_Visits">
+          <Key>
+            <PropertyRef Name="VisitId" />
+          </Key>
+          <Property Name="VisitId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IP" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="SiteId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="VisitDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_tbl_Logins_tbl_Users">
+          <End Role="tbl_Users" Type="RizehModel.Store.tbl_Users" Multiplicity="1" />
+          <End Role="tbl_Logins" Type="RizehModel.Store.tbl_Logins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tbl_Logins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Payments_tbl_Products">
+          <End Role="tbl_Products" Type="RizehModel.Store.tbl_Products" Multiplicity="1" />
+          <End Role="tbl_Payments" Type="RizehModel.Store.tbl_Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="tbl_Payments">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Payments_tbl_Users">
+          <End Role="tbl_Users" Type="RizehModel.Store.tbl_Users" Multiplicity="1" />
+          <End Role="tbl_Payments" Type="RizehModel.Store.tbl_Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tbl_Payments">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Products_ProductType">
+          <End Role="tbl_ProductType" Type="RizehModel.Store.tbl_ProductType" Multiplicity="1" />
+          <End Role="tbl_Products" Type="RizehModel.Store.tbl_Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ProductType">
+              <PropertyRef Name="ProductTypeId" />
+            </Principal>
+            <Dependent Role="tbl_Products">
+              <PropertyRef Name="ProductTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Requests_tbl_RequestType">
+          <End Role="tbl_RequestType" Type="RizehModel.Store.tbl_RequestType" Multiplicity="1" />
+          <End Role="tbl_Requests" Type="RizehModel.Store.tbl_Requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_RequestType">
+              <PropertyRef Name="RequestTypeId" />
+            </Principal>
+            <Dependent Role="tbl_Requests">
+              <PropertyRef Name="RequestTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Requests_tbl_Users">
+          <End Role="tbl_Users" Type="RizehModel.Store.tbl_Users" Multiplicity="0..1" />
+          <End Role="tbl_Requests" Type="RizehModel.Store.tbl_Requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tbl_Requests">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Scores_tbl_ScoreType">
+          <End Role="tbl_ScoreType" Type="RizehModel.Store.tbl_ScoreType" Multiplicity="1" />
+          <End Role="tbl_Scores" Type="RizehModel.Store.tbl_Scores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ScoreType">
+              <PropertyRef Name="ScoreTypeId" />
+            </Principal>
+            <Dependent Role="tbl_Scores">
+              <PropertyRef Name="ScoreTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Scores_tbl_Users">
+          <End Role="tbl_Users" Type="RizehModel.Store.tbl_Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_Scores" Type="RizehModel.Store.tbl_Scores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tbl_Scores">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Sites_tbl_Users">
+          <End Role="tbl_Users" Type="RizehModel.Store.tbl_Users" Multiplicity="1" />
+          <End Role="tbl_Sites" Type="RizehModel.Store.tbl_Sites" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tbl_Sites">
+              <PropertyRef Name="OwnerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Users_tbl_UserState">
+          <End Role="tbl_UserState" Type="RizehModel.Store.tbl_UserState" Multiplicity="1" />
+          <End Role="tbl_Users" Type="RizehModel.Store.tbl_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserState">
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="tbl_Users">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Visits_tbl_Sites">
+          <End Role="tbl_Sites" Type="RizehModel.Store.tbl_Sites" Multiplicity="1" />
+          <End Role="tbl_Visits" Type="RizehModel.Store.tbl_Visits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Sites">
+              <PropertyRef Name="SiteId" />
+            </Principal>
+            <Dependent Role="tbl_Visits">
+              <PropertyRef Name="SiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Visits_tbl_Users">
+          <End Role="tbl_Users" Type="RizehModel.Store.tbl_Users" Multiplicity="1" />
+          <End Role="tbl_Visits" Type="RizehModel.Store.tbl_Visits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tbl_Visits">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RizehModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_Logins" EntityType="RizehModel.Logins" />
+          <EntitySet Name="tbl_Payments" EntityType="RizehModel.Payments" />
+          <EntitySet Name="tbl_Products" EntityType="RizehModel.Products" />
+          <EntitySet Name="tbl_ProductType" EntityType="RizehModel.ProductType" />
+          <EntitySet Name="tbl_Requests" EntityType="RizehModel.Requests" />
+          <EntitySet Name="tbl_RequestType" EntityType="RizehModel.RequestType" />
+          <EntitySet Name="tbl_Scores" EntityType="RizehModel.Scores" />
+          <EntitySet Name="tbl_ScoreType" EntityType="RizehModel.ScoreType" />
+          <EntitySet Name="tbl_Sites" EntityType="RizehModel.Sites" />
+          <EntitySet Name="tbl_Users" EntityType="RizehModel.Users" />
+          <EntitySet Name="tbl_UserState" EntityType="RizehModel.UserState" />
+          <EntitySet Name="tbl_Visits" EntityType="RizehModel.Visits" />
+          <AssociationSet Name="FK_tbl_Logins_tbl_Users" Association="RizehModel.FK_tbl_Logins_tbl_Users">
+            <End Role="tbl_Users" EntitySet="tbl_Users" />
+            <End Role="tbl_Logins" EntitySet="tbl_Logins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Payments_tbl_Products" Association="RizehModel.FK_tbl_Payments_tbl_Products">
+            <End Role="tbl_Products" EntitySet="tbl_Products" />
+            <End Role="tbl_Payments" EntitySet="tbl_Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Payments_tbl_Users" Association="RizehModel.FK_tbl_Payments_tbl_Users">
+            <End Role="tbl_Users" EntitySet="tbl_Users" />
+            <End Role="tbl_Payments" EntitySet="tbl_Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Products_ProductType" Association="RizehModel.FK_tbl_Products_ProductType">
+            <End Role="tbl_ProductType" EntitySet="tbl_ProductType" />
+            <End Role="tbl_Products" EntitySet="tbl_Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Requests_tbl_RequestType" Association="RizehModel.FK_tbl_Requests_tbl_RequestType">
+            <End Role="tbl_RequestType" EntitySet="tbl_RequestType" />
+            <End Role="tbl_Requests" EntitySet="tbl_Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Requests_tbl_Users" Association="RizehModel.FK_tbl_Requests_tbl_Users">
+            <End Role="tbl_Users" EntitySet="tbl_Users" />
+            <End Role="tbl_Requests" EntitySet="tbl_Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Scores_tbl_ScoreType" Association="RizehModel.FK_tbl_Scores_tbl_ScoreType">
+            <End Role="tbl_ScoreType" EntitySet="tbl_ScoreType" />
+            <End Role="tbl_Scores" EntitySet="tbl_Scores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Scores_tbl_Users" Association="RizehModel.FK_tbl_Scores_tbl_Users">
+            <End Role="tbl_Users" EntitySet="tbl_Users" />
+            <End Role="tbl_Scores" EntitySet="tbl_Scores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Sites_tbl_Users" Association="RizehModel.FK_tbl_Sites_tbl_Users">
+            <End Role="tbl_Users" EntitySet="tbl_Users" />
+            <End Role="tbl_Sites" EntitySet="tbl_Sites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Visits_tbl_Sites" Association="RizehModel.FK_tbl_Visits_tbl_Sites">
+            <End Role="tbl_Sites" EntitySet="tbl_Sites" />
+            <End Role="tbl_Visits" EntitySet="tbl_Visits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Users_tbl_UserState" Association="RizehModel.FK_tbl_Users_tbl_UserState">
+            <End Role="tbl_UserState" EntitySet="tbl_UserState" />
+            <End Role="tbl_Users" EntitySet="tbl_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Visits_tbl_Users" Association="RizehModel.FK_tbl_Visits_tbl_Users">
+            <End Role="tbl_Users" EntitySet="tbl_Users" />
+            <End Role="tbl_Visits" EntitySet="tbl_Visits" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Logins">
+          <Key>
+            <PropertyRef Name="LoginId" />
+          </Key>
+          <Property Name="LoginId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="LoginDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IP" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="SystemId" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tbl_Users" Relationship="RizehModel.FK_tbl_Logins_tbl_Users" FromRole="tbl_Logins" ToRole="tbl_Users" />
+        </EntityType>
+        <EntityType Name="Payments">
+          <Key>
+            <PropertyRef Name="PaymentId" />
+          </Key>
+          <Property Name="PaymentId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="IdGet" Type="Int32" Nullable="false" />
+          <Property Name="TransId" Type="Int32" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="PayDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Amount" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tbl_Products" Relationship="RizehModel.FK_tbl_Payments_tbl_Products" FromRole="tbl_Payments" ToRole="tbl_Products" />
+          <NavigationProperty Name="tbl_Users" Relationship="RizehModel.FK_tbl_Payments_tbl_Users" FromRole="tbl_Payments" ToRole="tbl_Users" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductTypeId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="350" Unicode="true" FixedLength="false" />
+          <Property Name="Cost" Type="Int32" Nullable="false" />
+          <Property Name="Discount" Type="Int32" Nullable="false" />
+          <Property Name="RegisterDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Value" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tbl_Payments" Relationship="RizehModel.FK_tbl_Payments_tbl_Products" FromRole="tbl_Products" ToRole="tbl_Payments" />
+          <NavigationProperty Name="tbl_ProductType" Relationship="RizehModel.FK_tbl_Products_ProductType" FromRole="tbl_Products" ToRole="tbl_ProductType" />
+        </EntityType>
+        <EntityType Name="ProductType">
+          <Key>
+            <PropertyRef Name="ProductTypeId" />
+          </Key>
+          <Property Name="ProductTypeId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Period" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tbl_Products" Relationship="RizehModel.FK_tbl_Products_ProductType" FromRole="tbl_ProductType" ToRole="tbl_Products" />
+        </EntityType>
+        <EntityType Name="Requests">
+          <Key>
+            <PropertyRef Name="RequestId" />
+          </Key>
+          <Property Name="RequestId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RequestTypeId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="RequestDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IP" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="SystemId" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tbl_RequestType" Relationship="RizehModel.FK_tbl_Requests_tbl_RequestType" FromRole="tbl_Requests" ToRole="tbl_RequestType" />
+          <NavigationProperty Name="tbl_Users" Relationship="RizehModel.FK_tbl_Requests_tbl_Users" FromRole="tbl_Requests" ToRole="tbl_Users" />
+        </EntityType>
+        <EntityType Name="RequestType">
+          <Key>
+            <PropertyRef Name="RequestTypeId" />
+          </Key>
+          <Property Name="RequestTypeId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CommandName" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="tbl_Requests" Relationship="RizehModel.FK_tbl_Requests_tbl_RequestType" FromRole="tbl_RequestType" ToRole="tbl_Requests" />
+        </EntityType>
+        <EntityType Name="Scores">
+          <Key>
+            <PropertyRef Name="ScoreId" />
+          </Key>
+          <Property Name="ScoreId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ScoreTypeId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="Int32" Nullable="false" />
+          <Property Name="GetDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tbl_ScoreType" Relationship="RizehModel.FK_tbl_Scores_tbl_ScoreType" FromRole="tbl_Scores" ToRole="tbl_ScoreType" />
+          <NavigationProperty Name="tbl_Users" Relationship="RizehModel.FK_tbl_Scores_tbl_Users" FromRole="tbl_Scores" ToRole="tbl_Users" />
+        </EntityType>
+        <EntityType Name="ScoreType">
+          <Key>
+            <PropertyRef Name="ScoreTypeId" />
+          </Key>
+          <Property Name="ScoreTypeId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tbl_Scores" Relationship="RizehModel.FK_tbl_Scores_tbl_ScoreType" FromRole="tbl_ScoreType" ToRole="tbl_Scores" />
+        </EntityType>
+        <EntityType Name="Sites">
+          <Key>
+            <PropertyRef Name="SiteId" />
+          </Key>
+          <Property Name="SiteId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="OwnerId" Type="Int32" Nullable="false" />
+          <Property Name="Url" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Topic" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="1500" Unicode="true" FixedLength="false" />
+          <Property Name="RegisterDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OldVisits" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsBlocked" Type="Boolean" Nullable="false" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_Users" Relationship="RizehModel.FK_tbl_Sites_tbl_Users" FromRole="tbl_Sites" ToRole="tbl_Users" />
+          <NavigationProperty Name="tbl_Visits" Relationship="RizehModel.FK_tbl_Visits_tbl_Sites" FromRole="tbl_Sites" ToRole="tbl_Visits" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="true" />
+          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="StateId" Type="Int32" Nullable="false" />
+          <Property Name="ScoreStep" Type="Int32" Nullable="false" />
+          <Property Name="ConfirmCode" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="ExpireDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_Logins" Relationship="RizehModel.FK_tbl_Logins_tbl_Users" FromRole="tbl_Users" ToRole="tbl_Logins" />
+          <NavigationProperty Name="tbl_Payments" Relationship="RizehModel.FK_tbl_Payments_tbl_Users" FromRole="tbl_Users" ToRole="tbl_Payments" />
+          <NavigationProperty Name="tbl_Requests" Relationship="RizehModel.FK_tbl_Requests_tbl_Users" FromRole="tbl_Users" ToRole="tbl_Requests" />
+          <NavigationProperty Name="tbl_Scores" Relationship="RizehModel.FK_tbl_Scores_tbl_Users" FromRole="tbl_Users" ToRole="tbl_Scores" />
+          <NavigationProperty Name="tbl_Sites" Relationship="RizehModel.FK_tbl_Sites_tbl_Users" FromRole="tbl_Users" ToRole="tbl_Sites" />
+          <NavigationProperty Name="tbl_UserState" Relationship="RizehModel.FK_tbl_Users_tbl_UserState" FromRole="tbl_Users" ToRole="tbl_UserState" />
+          <NavigationProperty Name="tbl_Visits" Relationship="RizehModel.FK_tbl_Visits_tbl_Users" FromRole="tbl_Users" ToRole="tbl_Visits" />
+        </EntityType>
+        <EntityType Name="UserState">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tbl_Users" Relationship="RizehModel.FK_tbl_Users_tbl_UserState" FromRole="tbl_UserState" ToRole="tbl_Users" />
+        </EntityType>
+        <EntityType Name="Visits">
+          <Key>
+            <PropertyRef Name="VisitId" />
+          </Key>
+          <Property Name="VisitId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IP" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="SiteId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="VisitDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tbl_Sites" Relationship="RizehModel.FK_tbl_Visits_tbl_Sites" FromRole="tbl_Visits" ToRole="tbl_Sites" />
+          <NavigationProperty Name="tbl_Users" Relationship="RizehModel.FK_tbl_Visits_tbl_Users" FromRole="tbl_Visits" ToRole="tbl_Users" />
+        </EntityType>
+        <Association Name="FK_tbl_Logins_tbl_Users">
+          <End Role="tbl_Users" Type="RizehModel.Users" Multiplicity="1" />
+          <End Role="tbl_Logins" Type="RizehModel.Logins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tbl_Logins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Payments_tbl_Products">
+          <End Role="tbl_Products" Type="RizehModel.Products" Multiplicity="1" />
+          <End Role="tbl_Payments" Type="RizehModel.Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="tbl_Payments">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Payments_tbl_Users">
+          <End Role="tbl_Users" Type="RizehModel.Users" Multiplicity="1" />
+          <End Role="tbl_Payments" Type="RizehModel.Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tbl_Payments">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Products_ProductType">
+          <End Role="tbl_ProductType" Type="RizehModel.ProductType" Multiplicity="1" />
+          <End Role="tbl_Products" Type="RizehModel.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ProductType">
+              <PropertyRef Name="ProductTypeId" />
+            </Principal>
+            <Dependent Role="tbl_Products">
+              <PropertyRef Name="ProductTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Requests_tbl_RequestType">
+          <End Role="tbl_RequestType" Type="RizehModel.RequestType" Multiplicity="1" />
+          <End Role="tbl_Requests" Type="RizehModel.Requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_RequestType">
+              <PropertyRef Name="RequestTypeId" />
+            </Principal>
+            <Dependent Role="tbl_Requests">
+              <PropertyRef Name="RequestTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Requests_tbl_Users">
+          <End Role="tbl_Users" Type="RizehModel.Users" Multiplicity="0..1" />
+          <End Role="tbl_Requests" Type="RizehModel.Requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tbl_Requests">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Scores_tbl_ScoreType">
+          <End Role="tbl_ScoreType" Type="RizehModel.ScoreType" Multiplicity="1" />
+          <End Role="tbl_Scores" Type="RizehModel.Scores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ScoreType">
+              <PropertyRef Name="ScoreTypeId" />
+            </Principal>
+            <Dependent Role="tbl_Scores">
+              <PropertyRef Name="ScoreTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Scores_tbl_Users">
+          <End Role="tbl_Users" Type="RizehModel.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_Scores" Type="RizehModel.Scores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tbl_Scores">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Sites_tbl_Users">
+          <End Role="tbl_Users" Type="RizehModel.Users" Multiplicity="1" />
+          <End Role="tbl_Sites" Type="RizehModel.Sites" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tbl_Sites">
+              <PropertyRef Name="OwnerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Visits_tbl_Sites">
+          <End Role="tbl_Sites" Type="RizehModel.Sites" Multiplicity="1" />
+          <End Role="tbl_Visits" Type="RizehModel.Visits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Sites">
+              <PropertyRef Name="SiteId" />
+            </Principal>
+            <Dependent Role="tbl_Visits">
+              <PropertyRef Name="SiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Users_tbl_UserState">
+          <End Role="tbl_UserState" Type="RizehModel.UserState" Multiplicity="1" />
+          <End Role="tbl_Users" Type="RizehModel.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_UserState">
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="tbl_Users">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Visits_tbl_Users">
+          <End Role="tbl_Users" Type="RizehModel.Users" Multiplicity="1" />
+          <End Role="tbl_Visits" Type="RizehModel.Visits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tbl_Visits">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RizehModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="tbl_Logins">
+            <EntityTypeMapping TypeName="RizehModel.Logins">
+              <MappingFragment StoreEntitySet="tbl_Logins">
+                <ScalarProperty Name="LoginId" ColumnName="LoginId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="SystemId" ColumnName="SystemId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Payments">
+            <EntityTypeMapping TypeName="RizehModel.Payments">
+              <MappingFragment StoreEntitySet="tbl_Payments">
+                <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="IdGet" ColumnName="IdGet" />
+                <ScalarProperty Name="TransId" ColumnName="TransId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="PayDate" ColumnName="PayDate" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Products">
+            <EntityTypeMapping TypeName="RizehModel.Products">
+              <MappingFragment StoreEntitySet="tbl_Products">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="ProductTypeId" ColumnName="ProductTypeId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ProductType">
+            <EntityTypeMapping TypeName="RizehModel.ProductType">
+              <MappingFragment StoreEntitySet="tbl_ProductType">
+                <ScalarProperty Name="ProductTypeId" ColumnName="ProductTypeId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Period" ColumnName="Period" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Requests">
+            <EntityTypeMapping TypeName="RizehModel.Requests">
+              <MappingFragment StoreEntitySet="tbl_Requests">
+                <ScalarProperty Name="RequestId" ColumnName="RequestId" />
+                <ScalarProperty Name="RequestTypeId" ColumnName="RequestTypeId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="SystemId" ColumnName="SystemId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_RequestType">
+            <EntityTypeMapping TypeName="RizehModel.RequestType">
+              <MappingFragment StoreEntitySet="tbl_RequestType">
+                <ScalarProperty Name="RequestTypeId" ColumnName="RequestTypeId" />
+                <ScalarProperty Name="CommandName" ColumnName="CommandName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Scores">
+            <EntityTypeMapping TypeName="RizehModel.Scores">
+              <MappingFragment StoreEntitySet="tbl_Scores">
+                <ScalarProperty Name="ScoreId" ColumnName="ScoreId" />
+                <ScalarProperty Name="ScoreTypeId" ColumnName="ScoreTypeId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="GetDate" ColumnName="GetDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ScoreType">
+            <EntityTypeMapping TypeName="RizehModel.ScoreType">
+              <MappingFragment StoreEntitySet="tbl_ScoreType">
+                <ScalarProperty Name="ScoreTypeId" ColumnName="ScoreTypeId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Sites">
+            <EntityTypeMapping TypeName="RizehModel.Sites">
+              <MappingFragment StoreEntitySet="tbl_Sites">
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Topic" ColumnName="Topic" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+                <ScalarProperty Name="OldVisits" ColumnName="OldVisits" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsBlocked" ColumnName="IsBlocked" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Users">
+            <EntityTypeMapping TypeName="RizehModel.Users">
+              <MappingFragment StoreEntitySet="tbl_Users">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="ScoreStep" ColumnName="ScoreStep" />
+                <ScalarProperty Name="ConfirmCode" ColumnName="ConfirmCode" />
+                <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_UserState">
+            <EntityTypeMapping TypeName="RizehModel.UserState">
+              <MappingFragment StoreEntitySet="tbl_UserState">
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Visits">
+            <EntityTypeMapping TypeName="RizehModel.Visits">
+              <MappingFragment StoreEntitySet="tbl_Visits">
+                <ScalarProperty Name="VisitId" ColumnName="VisitId" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="VisitDate" ColumnName="VisitDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

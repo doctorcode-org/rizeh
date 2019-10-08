@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Parsnet.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Revision" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Build" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ClientFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://www.rizeh.com/Client/RizehClient.exe</Value>
+    </Setting>
+    <Setting Name="Major" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="Minor" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ResetPasswordEmail" Type="System.String" Scope="User">
+      <Value Profile="(Default)">&lt;!DOCTYPE html&gt;\r\n\r\n&lt;html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\"&gt;\r\n&lt;head&gt;\r\n    &lt;meta charset=\"utf-8\" /&gt;\r\n    &lt;title&gt;&lt;/title&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n    &lt;div style=\"direction: rtl; text-align: justify; font-family: Tahoma; font-size: 14px; line-height: 18px;\"&gt;\r\n        برای بازنشانی رمز عبور خود در نرم افزار ریزه بر روی لینک زیر کلیک کنید:&lt;br /&gt;\r\n    &lt;a href=\"[Url]\"&gt;بازنشانی رمز عبور در ریزه&lt;/a&gt;\r\n    &lt;/div&gt;\r\n&lt;/body&gt;\r\n&lt;/html&gt;</Value>
+    </Setting>
+    <Setting Name="ScoreStep" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="ServerPort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">7070</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
